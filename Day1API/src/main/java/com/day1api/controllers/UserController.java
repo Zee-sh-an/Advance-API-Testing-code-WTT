@@ -9,24 +9,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-     @GetMapping("/users")
+     @GetMapping("/getAll")
     public ResponseEntity getAllUsers(){
          return  userService.getAllusers();
      }
 
-     @GetMapping("/getById/{id}")
-     public ResponseEntity getById(@PathVariable long id){
-         return userService.getById(id) ;
-     }
-
     @PostMapping("/add")
     public ResponseEntity addUser(@Valid @RequestBody Users user){
-
         return userService.addUser(user);
     }
 
@@ -41,23 +36,9 @@ public class UserController {
          return userService.updateUser(user,userId);
      }
 
-     @GetMapping("/UserByEmail/{email}")
-    public ResponseEntity getUserByEmail(@PathVariable String email){
-         return userService.userByEmail(email);
-     }
-
-    @GetMapping("/UserByMobNum/{mobNum}")
-    public ResponseEntity getUserByMobNum(@PathVariable String mobNum){
-        return userService.userByMobileNumber(mobNum);
-    }
-
-    @GetMapping("/UserByStatus/{status}")
-    public ResponseEntity getUserByStatus(@PathVariable Status status){
-        return userService.userByStatus(status);
-    }
 
     @GetMapping("/search")
-    public ResponseEntity search(@RequestParam (required = false)String email){
-        return userService.userByEmail(email);
+    public ResponseEntity search(@RequestParam (required = false)String email,@RequestParam(required = false)String mobNumber,@RequestParam(required = false) Status status,@RequestParam(required = false,defaultValue ="0") long id){
+        return userService.userSearch(email,mobNumber,status,  id);
     }
 }
