@@ -2,11 +2,13 @@ package com.day1api.service;
 
 import com.day1api.models.Error;
 import com.day1api.models.Status;
+import com.day1api.models.UserDTO;
 import com.day1api.models.Users;
 import com.day1api.repo.UserRepsitory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -91,13 +93,38 @@ public class UserService {
                 Error error = Error.builder().code(HttpStatus.NOT_FOUND.getReasonPhrase()).message("Sorry User not found").build();
                 return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
             }
-//            Users oldData=returnUser.get();
-//            if (user.getName()!=null){
-//                oldData.setName(user.getName());
-//            }
-//            getById(id);
+            Users oldData=returnUser.get();
+            if (user.getName().isEmpty()){
+                user.setName(oldData.getName());
+            }
 
-//            oldData.setModifiedTime(new Date().getTime());
+            if (user.getLastName().isEmpty()){
+                user.setLastName(oldData.getLastName());
+            }
+
+            if (user.getAddress().isEmpty()){
+                user.setAddress(oldData.getAddress());
+            }
+
+            if (user.getDate()==null){
+                user.setDate(oldData.getDate());
+            }
+
+            if (user.getEmail().isEmpty()){
+                user.setName(oldData.getEmail());
+            }
+
+            if (user.getPassword().isEmpty()){
+                user.setPassword(oldData.getPassword());
+            }
+
+            if (user.getMobNumber().isEmpty()){
+                user.setMobNumber(oldData.getMobNumber());
+            }
+
+
+            user.setCreatedTime(oldData.getCreatedTime());
+            user.setModifiedTime(new Date().getTime());
             user.setId(id);
             Users updatedUser = userRepsitory.save(user);
             return new ResponseEntity<>(updatedUser, HttpStatus.OK);
@@ -118,14 +145,32 @@ public class UserService {
 //                return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 //            }
 //            Users oldData=returnUser.get();
-//            if (user.getName()!=null){
-//                oldData.setName(user.getName());
-//            }
-////            getById(id);
+////            Users oldData=returnUser;
 //
-//           oldData.setModifiedTime(new Date().getTime());
-//            Users updatedUser = userRepsitory.save(oldData);
-//            return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+////            if (user.getName()!=null){
+////                oldData.setName(user.getName());
+////            }
+//
+////            ModelMapper modelMapper =new ModelMapper();
+////            UserDTO userDTO=modelMapper.map(user,UserDTO.class);
+////            userDTO.setName(oldData.getName());
+////            userDTO.setEmail(oldData.getEmail());
+////            userDTO.setMobNumber(oldData.getMobNumber());
+////            userDTO.setLastName(oldData.getLastName());
+////            userDTO.setDate(oldData.getDate());
+////            userDTO.setAddress(oldData.getAddress());
+////            userDTO.setPassword(oldData.getPassword());
+////            userDTO.setModifiedTime(new Date().getTime());
+//
+//
+//
+////           oldData.setModifiedTime(new Date().getTime());
+////            Users updatedUser = userRepsitory.save(oldData);
+//            Users updatedUser = userRepsitory.save(user);
+//
+//            UserDTO returnUserDTO = modelMapper.map(updatedUser,UserDTO.class);
+//
+//            return new ResponseEntity<>(returnUserDTO, HttpStatus.OK);
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //            Error error = Error.builder().code(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase()).message("User updation Failed").build();

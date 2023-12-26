@@ -13,8 +13,8 @@ public interface UserRepsitory extends JpaRepository<Users,Long> {
 //    @Query("select u from Users as u where u.email =:email")
 //    List<Users>  getByEmail(@Param("email") String email);
 
-    @Query("select u from Users as u where u.mobNumber =:mobNum or u.id=:id or u.status=:status or u.email=:email")
-    List<Users> searchData(@Param("mobNum")String mobNum, @Param("id") long id, @Param("status") Status status, @Param("email") String email);
+//    @Query("select u from Users as u where u.mobNumber =:mobNum or u.id=:id or u.status=:status or u.email=:email")
+//    List<Users> searchData(@Param("mobNum")String mobNum, @Param("id") long id, @Param("status") Status status, @Param("email") String email);
 
 
 //    @Query("select u from Users as u where u.status =:status")
