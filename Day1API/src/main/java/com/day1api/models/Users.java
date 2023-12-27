@@ -8,6 +8,7 @@ import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
@@ -37,7 +38,7 @@ public class Users {
 
     @Size(min = 6,max =15)
     private String password;
-
+//    @CreationTimestamp
     private long createdTime=new Date().getTime();
 
 //    @UpdateTimestamp
@@ -45,7 +46,7 @@ public class Users {
 
     private Status status=Status.ACTIVE;
 
-    @Temporal(TemporalType.DATE)
-    @JsonFormat(pattern = "dd-MM-yyyy")
+    @Temporal(TemporalType.TIMESTAMP)
+//    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date date=new Date();
 }

@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import java.time.*;
 import java.util.*;
 
 @Service
@@ -85,55 +86,55 @@ public class UserService {
         }
     }
 
-    public ResponseEntity updateUser(Users user, long id) {
-
-        try {
-            Optional<Users> returnUser = userRepsitory.findById(id);
-            if (returnUser.isEmpty()) {
-                Error error = Error.builder().code(HttpStatus.NOT_FOUND.getReasonPhrase()).message("Sorry User not found").build();
-                return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-            }
-            Users oldData=returnUser.get();
-            if (user.getName().isEmpty()){
-                user.setName(oldData.getName());
-            }
-
-            if (user.getLastName().isEmpty()){
-                user.setLastName(oldData.getLastName());
-            }
-
-            if (user.getAddress().isEmpty()){
-                user.setAddress(oldData.getAddress());
-            }
-
-            if (user.getDate()==null){
-                user.setDate(oldData.getDate());
-            }
-
-            if (user.getEmail().isEmpty()){
-                user.setName(oldData.getEmail());
-            }
-
-            if (user.getPassword().isEmpty()){
-                user.setPassword(oldData.getPassword());
-            }
-
-            if (user.getMobNumber().isEmpty()){
-                user.setMobNumber(oldData.getMobNumber());
-            }
-
-
-            user.setCreatedTime(oldData.getCreatedTime());
-            user.setModifiedTime(new Date().getTime());
-            user.setId(id);
-            Users updatedUser = userRepsitory.save(user);
-            return new ResponseEntity<>(updatedUser, HttpStatus.OK);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Error error = Error.builder().code(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase()).message("User updation Failed").build();
-            return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+//    public ResponseEntity updateUser(Users user, long id) {
+//
+//        try {
+//            Optional<Users> returnUser = userRepsitory.findById(id);
+//            if (returnUser.isEmpty()) {
+//                Error error = Error.builder().code(HttpStatus.NOT_FOUND.getReasonPhrase()).message("Sorry User not found").build();
+//                return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+//            }
+//            Users oldData=returnUser.get();
+//            if (user.getName().isEmpty()){
+//                user.setName(oldData.getName());
+//            }
+//
+//            if (user.getLastName().isEmpty()){
+//                user.setLastName(oldData.getLastName());
+//            }
+//
+//            if (user.getAddress().isEmpty()){
+//                user.setAddress(oldData.getAddress());
+//            }
+//
+//            if (user.getDate()==null){
+//                user.setDate(oldData.getDate());
+//            }
+//
+//            if (user.getEmail().isEmpty()){
+//                user.setName(oldData.getEmail());
+//            }
+//
+//            if (user.getPassword().isEmpty()){
+//                user.setPassword(oldData.getPassword());
+//            }
+//
+//            if (user.getMobNumber().isEmpty()){
+//                user.setMobNumber(oldData.getMobNumber());
+//            }
+//
+//
+//            user.setCreatedTime(oldData.getCreatedTime());
+//            user.setModifiedTime(new Date().getTime());
+//            user.setId(id);
+//            Users updatedUser = userRepsitory.save(user);
+//            return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            Error error = Error.builder().code(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase()).message("User updation Failed").build();
+//            return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 
 
 //    public ResponseEntity updateUser(Users user, long id) {
@@ -256,4 +257,63 @@ public class UserService {
             return new ResponseEntity<>(error, HttpStatus.OK);
         }
     }
+
+//    public ResponseEntity userSearchByDate(Date StartDate,Date EndDate) {
+//        try {
+//
+//            List<Users> usersList = userRepsitory.getByDate(StartDate, EndDate);
+//
+//            if (usersList.isEmpty()) {
+//                Error error = Error.builder().code(HttpStatus.BAD_REQUEST.getReasonPhrase()).message("User not found").build();
+//                return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+//            }
+//
+//            return new ResponseEntity<>(usersList,HttpStatus.OK);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            Error error= Error.builder().code(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase()).message("Fail to search by time").build();
+//            return new ResponseEntity<>(error,HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
+
+    public ResponseEntity userSearchByDate(Date StartDate,Date EndDate) {
+        try {
+
+//            List<Users> usersList = userRepsitory.getByDate(StartDate, EndDate);
+//
+//            if (usersList.isEmpty()) {
+//                Error error = Error.builder().code(HttpStatus.BAD_REQUEST.getReasonPhrase()).message("User not found").build();
+//                return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+//            }
+
+//            Instant instant=Instant.ofEpochMilli(StartDate);
+//
+//            ZonedDateTime zonedDateTimeUTC =instant.atZone(ZoneId.of("UTC"));
+//
+//            ZonedDateTime zonedDateTimeWithStartTime=zonedDateTimeUTC.with(LocalDateTime.of(zonedDateTimeUTC.toLocalDate(),LocalDateTime.MIN.toLocalTime()));
+//
+//            Instant instant1=Instant.ofEpochMilli(EndDate);
+//
+//            ZonedDateTime zonedDateTimeUTC1 =instant1.atZone(ZoneId.of("UTC"));
+//
+//            ZonedDateTime zonedDateTimeWithStartTime1=zonedDateTimeUTC1.with(LocalDateTime.of(zonedDateTimeUTC1.toLocalDate(),LocalDateTime.MIN.toLocalTime()));
+
+//            List<Users> usersList = userRepsitory.getByDate(zonedDateTimeWithStartTime, zonedDateTimeWithStartTime1);
+
+            List<Users> usersList = userRepsitory.getByDate(StartDate, EndDate);
+
+
+            if (usersList.isEmpty()) {
+                Error error = Error.builder().code(HttpStatus.BAD_REQUEST.getReasonPhrase()).message("User not found").build();
+                return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+            }
+
+            return new ResponseEntity<>(usersList,HttpStatus.OK);
+        }catch (Exception e){
+            e.printStackTrace();
+            Error error= Error.builder().code(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase()).message("Fail to search by time").build();
+            return new ResponseEntity<>(error,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }
