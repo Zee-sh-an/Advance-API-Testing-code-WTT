@@ -82,12 +82,12 @@ public class UserServiceTest {
 //        long id=1;
 //        Users users=new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,new Date());
 //
-//        when(userRepsitory.findById(id)).thenReturn(Optional.of(users));
+//        when(userRepository.findById(id)).thenReturn(Optional.of(users));
 //        ResponseEntity responseEntity=userService.userSearch(1);
 //    }
 
-    public @Test
-    void userSearchByDate() throws ParseException {
+    @Test
+    public void userSearchByDate() throws ParseException {
         String dateString ="2023-12-27 18:19:01.545000";
         SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         List<Users> usersList=new ArrayList<>();

@@ -30,7 +30,7 @@ public class UserController {
 
 
      @DeleteMapping("/delete/{userId}")
-    public ResponseEntity deleteUser(@PathVariable int userId){
+    public ResponseEntity deleteUser(@PathVariable long userId){
          return userService.deleteUser(userId);
      }
 
@@ -50,8 +50,7 @@ public class UserController {
 //        return userService.userSearchByDate(StartDate,EndDate);
 //    }
 @GetMapping("/searchByDate")
-public ResponseEntity searchByTime(@RequestParam("StartDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS") Date  StartDate, @RequestParam("EndDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS") Date EndDate){
+public ResponseEntity searchByDate(@RequestParam("StartDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS") Date  StartDate, @RequestParam("EndDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS") Date EndDate){
     return userService.userSearchByDate(StartDate,EndDate);
 }
-
 }
