@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
@@ -34,23 +35,19 @@ public class UserController {
          return userService.deleteUser(userId);
      }
 
-//     @PutMapping("/update/{userId}")
-//    public ResponseEntity updateUser(@Valid @RequestBody Users user ,@PathVariable("userId") int userId){
-//         return userService.updateUser(user,userId);
-//     }
+     @PutMapping("/update/{userId}")
+    public ResponseEntity updateUser(@Valid @RequestBody Users user ,@PathVariable("userId") long userId){
+         return userService.updateUser(user,userId);
+     }
+
+    @PatchMapping("/update/{userId}")
+    public ResponseEntity updateUserByFields(@PathVariable long userId,@RequestBody Map<String,Object> fields){
+         return userService.updateUserByFields(userId, fields);
+    }
 
 
     @GetMapping("/search")
-    public ResponseEntity search(@RequestParam (required = false)String email,@RequestParam(required = false)String mobNumber,@RequestParam(required = false) Status status,@RequestParam(required = false,defaultValue ="0") long id){
-        return userService.userSearch(email,mobNumber,status,  id);
+    public ResponseEntity search(@RequestParam (required = false)String email,@RequestParam(required = false)String mobNumber,@RequestParam(required = false) Status status,@RequestParam(required = false,defaultValue ="0") long id,@RequestParam(required = false,defaultValue = "0") long createdStartTime,@RequestParam(required = false,defaultValue = "0") long createdEndTime){
+        return userService.userSearch(email,mobNumber,status,id,createdStartTime,createdEndTime);
     }
-
-//    @GetMapping("/searchByDate")
-//    public ResponseEntity searchByTime(@RequestParam  @DateTimeFormat(pattern = "yyyy-MM-dd") Date StartDate, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date EndDate){
-//        return userService.userSearchByDate(StartDate,EndDate);
-//    }
-@GetMapping("/searchByDate")
-public ResponseEntity searchByDate(@RequestParam("StartDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS") Date  StartDate, @RequestParam("EndDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS") Date EndDate){
-    return userService.userSearchByDate(StartDate,EndDate);
-}
 }

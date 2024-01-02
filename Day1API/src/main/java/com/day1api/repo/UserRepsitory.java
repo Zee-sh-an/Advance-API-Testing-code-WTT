@@ -27,6 +27,6 @@ public interface UserRepsitory extends JpaRepository<Users,Long> {
 //    @Query("select u from Users as u where u.date BETWEEN :StartDate AND :EndDate")
 //    List<Users> getByDate(@Param("StartDate") Date StartDate,@Param("EndDate") Date EndDate);
 
-    @Query("select u from Users as u where u.date BETWEEN :StartDate AND :EndDate")
-    List<Users> getByDate(@Param("StartDate") Date StartDate, @Param("EndDate") Date EndDate);
+//    @Query("select u from Users as u where u.date BETWEEN :StartDate AND :EndDate")
+//    List<Users> getByDate(@Param("StartDate") Date StartDate, @Param("EndDate") Date EndDate);
 }

@@ -3,6 +3,8 @@ package com.day1api.service;
 import com.day1api.models.Status;
 import com.day1api.models.Users;
 import com.day1api.repo.UserRepsitory;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import org.junit.Assert;
 //import org.junit.jupiter.api.Test;
 import org.junit.Test;
@@ -27,14 +29,14 @@ public class UserServiceTest {
 
     @Mock
     private UserRepsitory userRepository;
+    @Mock
+    private Query query;
+
+    @Mock
+    private EntityManager entityManager;
 
     @InjectMocks
     private UserService userService;
-
-    @Test
-    public void getById() {
-
-    }
 
     @Test
     public void getAllusers() {
@@ -67,34 +69,22 @@ public class UserServiceTest {
 
     }
 
-//    public @Test
-//    void updateUser() {
-//        long id =1;
-//        Users users=new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,new Date());
-//
-//        when(userRepsitory.findById(id)).thenReturn(Optional.of(users));
-//        ResponseEntity responseEntity=userService.
-//
-//    }
+    public @Test
+    void updateUser() {
+        long id =1;
+        Users users=new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,new Date());
 
-//    public @Test
-//    void userSearch() {
-//        long id=1;
-//        Users users=new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,new Date());
-//
-//        when(userRepository.findById(id)).thenReturn(Optional.of(users));
-//        ResponseEntity responseEntity=userService.userSearch(1);
-//    }
+        when(userRepository.findById(id)).thenReturn(Optional.of(users));
+        ResponseEntity responseEntity=userService.updateUser(users,id);
+        Assert.assertEquals(responseEntity.getStatusCode(),HttpStatus.OK);
+    }
 
-    @Test
-    public void userSearchByDate() throws ParseException {
-        String dateString ="2023-12-27 18:19:01.545000";
-        SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        List<Users> usersList=new ArrayList<>();
-        usersList.add(new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,dateFormat.parse("2023-12-23 00:00:00.000000")));
+    public @Test
+    void userSearch() {
+        long id=1;
+        Users users=new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",1703755537220l,0, Status.ACTIVE,new Date());
 
-        when(userRepository.getByDate(dateFormat.parse("2023-12-21 00:00:00.000000"),dateFormat.parse("2023-12-27 18:19:01.545000")));
-        ResponseEntity responseEntity=userService.userSearchByDate(dateFormat.parse("2023-12-21 00:00:00.000000"),dateFormat.parse("2023-12-27 18:19:01.545000"));
+        ResponseEntity responseEntity=userService.userSearch("zk@gmail.com",null,null,0l,0l,0l);
         Assert.assertEquals(responseEntity.getStatusCode(),HttpStatus.OK);
     }
 }

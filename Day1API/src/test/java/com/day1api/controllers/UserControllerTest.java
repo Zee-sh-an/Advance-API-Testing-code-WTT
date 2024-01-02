@@ -68,28 +68,39 @@ public class UserControllerTest {
     }
 
     @Test
-    public void search() {
+    public void updateUser(){
+        long id=1;
+        Users users=new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,new Date());
+
+        ResponseEntity responseEntity=new ResponseEntity<>(HttpStatus.OK);
+        when(userService.updateUser(users,id)).thenReturn(responseEntity);
+        ResponseEntity responseEntity1=userController.updateUser(users,id);
+        Assert.assertEquals(responseEntity1.getStatusCode(),HttpStatus.OK);
+    }
+
+//    @Test
+//    public void updateUserByFields() {
+//        long id = 1;
+//        Users users = new Users(1, "zeeshan", "khan", "Agra", "1234567890", "zk@gmail.com", "qwerty", 50000, 50000, Status.ACTIVE, new Date());
+//
+//        String name = "zeeshan";
+//
+//
+//        ResponseEntity responseEntity = new ResponseEntity<>(HttpStatus.OK);
+//        when(userService.updateUserByFields(id, ));
+//        ResponseEntity responseEntity1 = userController.updateUser(users, id);
+//        Assert.assertEquals(responseEntity1.getStatusCode(), HttpStatus.OK);
+//    }
+
+    @Test
+    public void userSearch(){
 
         long id=1;
         Users users=new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,new Date());
 
-        ResponseEntity responseEntity =new ResponseEntity<>(HttpStatus.OK);
-        when(userService.userSearch(null,null,null,id)).thenReturn(responseEntity);
-        ResponseEntity responseEntity1=userController.search(null,null,null,id);
-        Assert.assertEquals(responseEntity1.getStatusCode(),HttpStatus.OK);
-    }
-
-    @Test
-    public void searchByDate() throws ParseException {
-
-//        String dateString ="2023-12-27 18:19:01.545000";
-        SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        List<Users> usersList=new ArrayList<>();
-        usersList.add(new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,dateFormat.parse("2023-12-23 00:00:00.000000")));
-
         ResponseEntity responseEntity=new ResponseEntity<>(HttpStatus.OK);
-        when(userService.userSearchByDate(dateFormat.parse("2023-12-21 00:00:00.000000"),dateFormat.parse("2023-12-27 18:19:01.545000"))).thenReturn(responseEntity);
-        ResponseEntity responseEntity1=userController.searchByDate(dateFormat.parse("2023-12-21 00:00:00.000000"),dateFormat.parse("2023-12-27 18:19:01.545000"));
+        when(userService.userSearch(null,null,null,id,0,0)).thenReturn(responseEntity);
+        ResponseEntity responseEntity1=userController.search(null,null,null,id,0,0);
         Assert.assertEquals(responseEntity1.getStatusCode(),HttpStatus.OK);
     }
 }

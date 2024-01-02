@@ -38,10 +38,9 @@ public class Users {
 
     @Size(min = 6,max =15)
     private String password;
-//    @CreationTimestamp
+
     private long createdTime=new Date().getTime();
 
-//    @UpdateTimestamp
     private long modifiedTime;
 
     private Status status=Status.ACTIVE;
