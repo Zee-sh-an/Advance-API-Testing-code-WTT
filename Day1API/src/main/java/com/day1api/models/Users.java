@@ -1,15 +1,10 @@
 package com.day1api.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 
@@ -45,7 +40,5 @@ public class Users {
 
     private Status status=Status.ACTIVE;
 
-    @Temporal(TemporalType.TIMESTAMP)
-//    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date date=new Date();
 }

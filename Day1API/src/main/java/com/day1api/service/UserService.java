@@ -94,34 +94,6 @@ public class UserService {
                 return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
             }
             Users oldData=returnUser.get();
-//            if (user.getName().isEmpty()){
-//                user.setName(oldData.getName());
-//            }
-//
-//            if (user.getLastName().isEmpty()){
-//                user.setLastName(oldData.getLastName());
-//            }
-//
-//            if (user.getAddress().isEmpty()){
-//                user.setAddress(oldData.getAddress());
-//            }
-//
-//            if (user.getDate()==null){
-//                user.setDate(oldData.getDate());
-//            }
-//
-//            if (user.getEmail().isEmpty()){
-//                user.setName(oldData.getEmail());
-//            }
-//
-//            if (user.getPassword().isEmpty()){
-//                user.setPassword(oldData.getPassword());
-//            }
-//
-//            if (user.getMobNumber().isEmpty()){
-//                user.setMobNumber(oldData.getMobNumber());
-//            }
-
 
             user.setCreatedTime(oldData.getCreatedTime());
             user.setModifiedTime(new Date().getTime());

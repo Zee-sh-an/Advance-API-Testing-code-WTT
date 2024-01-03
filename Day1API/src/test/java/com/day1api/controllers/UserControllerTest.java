@@ -14,10 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
@@ -78,19 +75,19 @@ public class UserControllerTest {
         Assert.assertEquals(responseEntity1.getStatusCode(),HttpStatus.OK);
     }
 
-//    @Test
-//    public void updateUserByFields() {
-//        long id = 1;
-//        Users users = new Users(1, "zeeshan", "khan", "Agra", "1234567890", "zk@gmail.com", "qwerty", 50000, 50000, Status.ACTIVE, new Date());
-//
-//        String name = "zeeshan";
-//
-//
-//        ResponseEntity responseEntity = new ResponseEntity<>(HttpStatus.OK);
-//        when(userService.updateUserByFields(id, ));
-//        ResponseEntity responseEntity1 = userController.updateUser(users, id);
-//        Assert.assertEquals(responseEntity1.getStatusCode(), HttpStatus.OK);
-//    }
+    @Test
+    public void updateUserByFields() {
+        long id = 1;
+        Users users = new Users(1, "zeeshan", "khan", "Agra", "1234567890", "zk@gmail.com", "qwerty", 50000, 50000, Status.ACTIVE, new Date());
+
+        Map<String, Object> fields=new HashMap<>();
+        fields.put("name","zeeshan");
+
+        ResponseEntity responseEntity = new ResponseEntity<>(HttpStatus.OK);
+        when(userService.updateUserByFields(id,fields)).thenReturn(responseEntity);
+        ResponseEntity responseEntity1 = userController.updateUserByFields(id,fields);
+        Assert.assertEquals(responseEntity1.getStatusCode(), HttpStatus.OK);
+    }
 
     @Test
     public void userSearch(){
