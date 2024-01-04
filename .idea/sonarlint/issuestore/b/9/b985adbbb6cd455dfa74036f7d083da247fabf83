@@ -1,59 +1,31 @@
 
-<<<<<<< HEAD
-Q
-java:S3740"/Provide the parametrized type for this generic.(ı¿İıÿÿÿÿ8‡ìÖüÌ1
 L
-java:S3740)"/Provide the parametrized type for this generic.(—’İÔ8‡ìÖüÌ1
+java:S3740"/Provide the parametrized type for this generic.(—’İÔ8‚ˆšÍ1
 L
-java:S3740:"/Provide the parametrized type for this generic.(Ÿ—Ş†8‡ìÖüÌ1
+java:S3740."/Provide the parametrized type for this generic.(Ÿ—Ş†8‚ˆšÍ1
 Q
-java:S3740N"/Provide the parametrized type for this generic.( ÷©»ıÿÿÿÿ8‡ìÖüÌ1
+java:S3740@"/Provide the parametrized type for this generic.( ÷©»ıÿÿÿÿ8‚ˆšÍ1
 Q
-java:S3740g"/Provide the parametrized type for this generic.(Öœí£üÿÿÿÿ8‡ìÖüÌ1
-Q
-java:S3740|"/Provide the parametrized type for this generic.(¡±©Şÿÿÿÿÿ8‡ìÖüÌ1
+java:S3740W"/Provide the parametrized type for this generic.(Öœí£üÿÿÿÿ8‚ˆšÍ1
+L
+java:S3740m"/Provide the parametrized type for this generic.(´À©¸8‘‚ˆšÍ1
 M
-java:S3740‘"/Provide the parametrized type for this generic.(™æÌ‘8‡ìÖüÌ1
-M
-java:S3740•"/Provide the parametrized type for this generic.(ìŠ¿8ˆìÖüÌ1
-R
-java:S3740¤"/Provide the parametrized type for this generic.(È¿™ùÿÿÿÿ8ˆìÖüÌ1
-R
-java:S3740¨"/Provide the parametrized type for this generic.(ÔØÁıÿÿÿÿ8ˆìÖüÌ1
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¦ìÖüÌ1
-]	java:S125A"<This block of commented-out lines of code should be removed.(œ´Ìøÿÿÿÿÿ8¯ìÖüÌ1
-X	java:S125Z"<This block of commented-out lines of code should be removed.(ï«ÆË8²ìÖüÌ1
-]	java:S125j"<This block of commented-out lines of code should be removed.(âŒÛíüÿÿÿÿ8´ìÖüÌ1
-=======
-L
-java:S3740"/Provide the parametrized type for this generic.(—’İÔ8ÏÄ©òÌ1
-L
-java:S3740."/Provide the parametrized type for this generic.(Ÿ—Ş†8ÏÄ©òÌ1
-Q
-java:S3740A"/Provide the parametrized type for this generic.( ÷©»ıÿÿÿÿ8ÏÄ©òÌ1
-Q
-java:S3740X"/Provide the parametrized type for this generic.(Öœí£üÿÿÿÿ8ÏÄ©òÌ1
-L
-java:S3740n"/Provide the parametrized type for this generic.(´À©¸8ÏÄ©òÌ1
-M
-java:S3740‡"/Provide the parametrized type for this generic.(‰Ÿş½8ÏÄ©òÌ1
+java:S3740†"/Provide the parametrized type for this generic.(‰Ÿş½8‘‚ˆšÍ1
 P
-java:S1199¡"-Extract this nested code block into a method.(ÃŞôúÿÿÿÿ8ÒÄ©òÌ1
+java:S1199 "-Extract this nested code block into a method.(ÃŞôúÿÿÿÿ8Üşô™Í1
 P
-java:S1199§"-Extract this nested code block into a method.(ÃŞôúÿÿÿÿ8ÒÄ©òÌ1
+java:S1199¦"-Extract this nested code block into a method.(ÃŞôúÿÿÿÿ8”‚ˆšÍ1
 P
-java:S1199®"-Extract this nested code block into a method.(ÃŞôúÿÿÿÿ8ÒÄ©òÌ1
+java:S1199­"-Extract this nested code block into a method.(ÃŞôúÿÿÿÿ8”‚ˆšÍ1
 T
-java:S2589x"7Remove this expression which always evaluates to "true"(½Ç³è8‘Æ©òÌ1
+java:S2589w"7Remove this expression which always evaluates to "true"(½Ç³è8ÉƒˆšÍ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8’Æ©òÌ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¬‚õ™Í1
 I
-java:S3011{",This accessibility update should be removed.(˜ÂÓ˜8¢Æ©òÌ1
+java:S3011z",This accessibility update should be removed.(˜ÂÓ˜8ÙƒˆšÍ1
 ]
-java:S1854‹":Remove this useless assignment to local variable "params".(Ú­Éåüÿÿÿÿ8¤Æ©òÌ1
+java:S1854Š":Remove this useless assignment to local variable "params".(Ú­Éåüÿÿÿÿ8ÜƒˆšÍ1
 `
-java:S1854±"=Remove this useless assignment to local variable "addClause".( Ú İûÿÿÿÿ8¤Æ©òÌ1
+java:S1854°"=Remove this useless assignment to local variable "addClause".( Ú İûÿÿÿÿ8ß‚õ™Í1
 N
-java:S1481‹"+Remove this unused "params" local variable.(Ú­Éåüÿÿÿÿ8¦Æ©òÌ1
->>>>>>> Subbranch
+java:S1481Š"+Remove this unused "params" local variable.(Ú­Éåüÿÿÿÿ8ŞƒˆšÍ1

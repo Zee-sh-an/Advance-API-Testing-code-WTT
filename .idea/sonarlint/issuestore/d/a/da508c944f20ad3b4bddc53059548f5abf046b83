@@ -1,42 +1,19 @@
 
-<<<<<<< HEAD
 Q
-java:S3740"/Provide the parametrized type for this generic.(ìüºãøÿÿÿÿ8ÚëÖüÌ1
+java:S3740"/Provide the parametrized type for this generic.(ìüºãøÿÿÿÿ8Ì¹‡šÍ1
 L
-java:S3740"/Provide the parametrized type for this generic.(®€¼8ÚëÖüÌ1
-L
-java:S3740"/Provide the parametrized type for this generic.(–¬é¦8ÚëÖüÌ1
-L
-java:S3740#"/Provide the parametrized type for this generic.(¿ª‹’8ÚëÖüÌ1
-K
-java:S3740("/Provide the parametrized type for this generic.(¾Šör8ÚëÖüÌ1
-K
-java:S3740-"/Provide the parametrized type for this generic.(À’Úm8ÚëÖüÌ1
+java:S3740 "/Provide the parametrized type for this generic.(–¬é¦8ÛˆšÍ1
 Q
-java:S37402"/Provide the parametrized type for this generic.(šÓ”Şüÿÿÿÿ8ÛëÖüÌ1
+java:S3740'"/Provide the parametrized type for this generic.(©ğ‰ûÿÿÿÿ8ÛˆšÍ1
 L
-java:S37407"/Provide the parametrized type for this generic.(ã¼Ú°8ÛëÖüÌ1
-L
-java:S3740<"/Provide the parametrized type for this generic.(ŸÛÛ…8ÛëÖüÌ1
+java:S3740,"/Provide the parametrized type for this generic.(ôëß‰8ÛˆšÍ1
+Q
+java:S37401"/Provide the parametrized type for this generic.(İ˜†Èûÿÿÿÿ8ÛˆšÍ1
+Q
+java:S3740;"/Provide the parametrized type for this generic.(Ï‹©ñøÿÿÿÿ8ÛˆšÍ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8áëÖüÌ1
-=======
-J
-java:S3740"/Provide the parametrized type for this generic.(ìüºãøÿÿÿÿ
-E
-java:S3740"/Provide the parametrized type for this generic.(–¬é¦
-J
-java:S3740""/Provide the parametrized type for this generic.(©ğ‰ûÿÿÿÿ
-E
-java:S3740'"/Provide the parametrized type for this generic.(ôëß‰
-J
-java:S3740,"/Provide the parametrized type for this generic.(İ˜†Èûÿÿÿÿ
-J
-java:S37402"/Provide the parametrized type for this generic.(Ï‹©ñøÿÿÿÿ
-X
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
-l
-java:S1128"QRemove this unused import 'org.springframework.format.annotation.DateTimeFormat'.(‡ˆôƒøÿÿÿÿ
-A
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü
->>>>>>> Subbranch
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8âˆšÍ1
+]	java:S125"<This block of commented-out lines of code should be removed.(‚íÑĞûÿÿÿÿ8äˆšÍ1
+]	java:S1256"<This block of commented-out lines of code should be removed.(¾µ¹Õşÿÿÿÿ8æˆšÍ1
+s
+java:S1128"QRemove this unused import 'org.springframework.format.annotation.DateTimeFormat'.(‡ˆôƒøÿÿÿÿ8çˆšÍ1
