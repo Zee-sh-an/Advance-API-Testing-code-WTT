@@ -1,4 +1,12 @@
 
+<<<<<<< HEAD
+Q
+java:S3740"/Provide the parametrized type for this generic.(°í©ºüÿÿÿÿ8äíÖüÌ1
+L
+java:S3740"/Provide the parametrized type for this generic.(ªþ¸Á8äíÖüÌ1
+Q
+java:S3740"/Provide the parametrized type for this generic.(ªÅ÷¿þÿÿÿÿ8åíÖüÌ1
+=======
 P	java:S125"<This block of commented-out lines of code should be removed.(†ã‘
 Q	java:S125"<This block of commented-out lines of code should be removed.(€¥Ò“
 Q	java:S125"<This block of commented-out lines of code should be removed.(æÙÿ‰
@@ -16,3 +24,4 @@ java:S1128	"+Remove this unused import 'java.util.Date'.(¸…¼ü
 F
 java:S1128
 "+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+>>>>>>> Subbranch
