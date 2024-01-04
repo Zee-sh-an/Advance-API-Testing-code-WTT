@@ -17,26 +17,28 @@ import java.util.Date;
 public class Users {
 
     @Id
-    long id;
+    private long id;
 
-    String name;
+    private String name;
 
-    String lastName;
+    private String lastName;
 
-    String address;
+    private String address;
 
-    @Size(min = 0 ,max = 10,message = "invalid Number")
-    String mobNumber;
+    @Size(min = 10 ,max = 10,message = "invalid Number")
+    private String mobNumber;
 
     @Email(regexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$",message = "Invalid email !!")
-    String email;
+    private String email;
 
     @Size(min = 6,max =15)
-    String password;
+    private String password;
 
-    long createdTime=new Date().getTime();
+    private long createdTime=new Date().getTime();
 
-    long modifiedTime;
+    private long modifiedTime;
 
-    Status status=Status.ACTIVE;
+    private Status status=Status.ACTIVE;
+
+    private Date date=new Date();
 }

@@ -1,6 +1,6 @@
 package com.day1api.models;
 
-public enum Status {
+public enum  Status {
 
     ACTIVE,
 
