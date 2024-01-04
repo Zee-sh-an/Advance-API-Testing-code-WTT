@@ -1,0 +1,27 @@
+
+<<<<<<< HEAD
+Q
+java:S3740"/Provide the parametrized type for this generic.(°í©ºüÿÿÿÿ8äíÖüÌ1
+L
+java:S3740"/Provide the parametrized type for this generic.(ªþ¸Á8äíÖüÌ1
+Q
+java:S3740"/Provide the parametrized type for this generic.(ªÅ÷¿þÿÿÿÿ8åíÖüÌ1
+=======
+P	java:S125"<This block of commented-out lines of code should be removed.(†ã‘
+Q	java:S125"<This block of commented-out lines of code should be removed.(€¥Ò“
+Q	java:S125"<This block of commented-out lines of code should be removed.(æÙÿ‰
+Q	java:S125"<This block of commented-out lines of code should be removed.(ºÅÂ
+V	java:S125"<This block of commented-out lines of code should be removed.(³ñþÈüÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(³ñþÈüÿÿÿÿ
+e
+java:S1128"JRemove this unused import 'org.springframework.data.jpa.repository.Query'.(Äºöïþÿÿÿÿ
+b
+java:S1128"LRemove this unused import 'org.springframework.data.repository.query.Param'.(©”šô
+O
+java:S1128"4Remove this unused import 'java.time.ZonedDateTime'.(Å¯Ð©ûÿÿÿÿ
+A
+java:S1128	"+Remove this unused import 'java.util.Date'.(¸…¼ü
+F
+java:S1128
+"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+>>>>>>> Subbranch
