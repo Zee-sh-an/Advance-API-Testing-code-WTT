@@ -30,8 +30,6 @@ public class UserControllerTest {
 
     @Test
     public void getAllUsers() {
-        List<Users> usersList=new ArrayList<>();
-        usersList.add(new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,new Date()));
 
         ResponseEntity responseEntity = new ResponseEntity<>(HttpStatus.OK);
         when(userService.getAllusers()).thenReturn(responseEntity);
@@ -55,7 +53,6 @@ public class UserControllerTest {
     public void deleteUser() {
 
         long id=1;
-        Users users=new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,new Date());
 
         ResponseEntity responseEntity=new ResponseEntity<>(HttpStatus.OK);
         when(userService.deleteUser(id)).thenReturn(responseEntity);
@@ -78,7 +75,6 @@ public class UserControllerTest {
     @Test
     public void updateUserByFields() {
         long id = 1;
-        Users users = new Users(1, "zeeshan", "khan", "Agra", "1234567890", "zk@gmail.com", "qwerty", 50000, 50000, Status.ACTIVE, new Date());
 
         Map<String, Object> fields=new HashMap<>();
         fields.put("name","zeeshan");
@@ -93,7 +89,6 @@ public class UserControllerTest {
     public void userSearch(){
 
         long id=1;
-        Users users=new Users(1,"zeeshan","khan","Agra","1234567890","zk@gmail.com","qwerty",50000,50000, Status.ACTIVE,new Date());
 
         ResponseEntity responseEntity=new ResponseEntity<>(HttpStatus.OK);
         when(userService.userSearch(null,null,null,id,0,0)).thenReturn(responseEntity);

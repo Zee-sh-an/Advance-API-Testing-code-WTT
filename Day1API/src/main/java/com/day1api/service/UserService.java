@@ -31,7 +31,6 @@ public class UserService {
         try {
             List<Users> users = userRepsitory.findAll();
             if (users.isEmpty()) {
-
                 Error error = Error.builder().code(HttpStatus.NOT_FOUND.getReasonPhrase()).message("Sorry there is no user").build();
                 return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
             }
@@ -43,15 +42,12 @@ public class UserService {
         }
     }
 
-    public ResponseEntity addUser(Users user) {
+    public ResponseEntity  addUser(Users user) {
 
         try {
-            if (ObjectUtils.isEmpty(user.getName())) {
-                Error error = Error.builder().code(HttpStatus.NO_CONTENT.getReasonPhrase()).message("Sorry user is null").build();
-                return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-            }
+
             Users user1 = userRepsitory.save(user);
-            return new ResponseEntity<>(user1, HttpStatus.OK);
+            return new ResponseEntity<>(user1, HttpStatus.CREATED);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,12 +64,9 @@ public class UserService {
             Optional<Users> userById = userRepsitory.findById(id);
 
             if (userById.isEmpty()) {
-
                 Error error = Error.builder().code(HttpStatus.NOT_FOUND.getReasonPhrase()).message("Sorry there is no user of this id").build();
                 return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-
             }
-
             userRepsitory.deleteById(id);
             Error error = Error.builder().code(HttpStatus.OK.getReasonPhrase()).message("Deleted Successfully").build();
             return new ResponseEntity<>(error, HttpStatus.OK);
@@ -112,13 +105,14 @@ public class UserService {
             Optional<Users> existingUser = userRepsitory.findById(id);
 
             if (existingUser.isEmpty()) {
-                Error error = Error.builder().code(HttpStatus.BAD_REQUEST.getReasonPhrase()).message("User not found").build();
-                return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+                Error error = Error.builder().code(HttpStatus.NOT_FOUND.getReasonPhrase()).message("User not found").build();
+                return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
             }
 
             if (existingUser.isPresent()) {
                 fields.forEach((key, value) -> {
                     Field field = ReflectionUtils.findField(Users.class, key);
+                    assert field != null;
                     field.setAccessible(true);
                     ReflectionUtils.setField(field, existingUser.get(), value);
                 });
@@ -135,7 +129,6 @@ public class UserService {
 
         try {
             Query query=null;
-            Map<String,Object> params=new HashMap<>();
             boolean addClause = false;
             StringBuilder sb=new StringBuilder();
             sb.append("select u from Users u ");
@@ -189,7 +182,7 @@ public class UserService {
         } catch (Exception e) {
             e.printStackTrace();
             Error error = Error.builder().code(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase()).message("Fail to find user by email").build();
-            return new ResponseEntity<>(error, HttpStatus.OK);
+            return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
